@@ -1,0 +1,32 @@
+.reviews
+	padding: calc( var(--index) * 7 )
+	text-align: left
+	& h2 
+		font-size: calc( var(--index) * 3)
+		width: 100%
+		max-width: 60%
+		margin: 40px auto
+		user-select: none
+	&__body
+		max-width: 60%
+		margin: 0 auto
+		width: 100%
+		display: flex
+		align-items: center
+		justify-content: center
+		flex-direction: column
+		gap: 15px
+		&-item
+			overflow: hidden
+			border-top-right-radius: 50px
+			border-bottom-left-radius: 25px
+			& img
+				width: 100%
+				height: 100%
+				object-fit: cover
+				vertical-align: top
+				transition: 0.2s
+				filter: grayscale(1)
+				&:hover
+					filter: grayscale(0)
+					

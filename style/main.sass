@@ -1,0 +1,160 @@
+@font-face
+	font-family: raleway-c
+	src: url(../fonts/raleway-regular.woff2)
+
+@font-face
+	font-family: outfit-c
+	src: url(../fonts/outfit-regular.woff2)
+
+:root
+	--index: calc( 1vw + 1vh )
+	--color-header: #f4efec
+	--color-text: #cdc6c3
+	--portfolio-gap: calc(var(--index) * 5)
+	--transition: 1.75s cubic-bezier(.2, .6, 0, 1)
+	--black: #2a2a2a
+	--transition: 1.25s cubic-bezier(.2, .5, 0, 1)
+	--transition-cursor: 2s cubic-bezier(.05, .5, 0, 1)
+	--second-color: #7c89fe
+	--second-colorm: #7c89fe
+
+
+.container, .first-section_image, .portfolio__textblock, .portfolio > *, .swiper-wrapper, .next__body > *, #mouse
+	will-change: transform
+.not__fullscreen
+	padding: 0 7vw
+.container
+	transition: padding 0.5s
+
+
+body
+	color: #fafafa
+	font-family: raleway-c
+	overflow-x: hidden
+	cursor: none
+	transition: background 1s
+	background: url(../img/bg.jpg)
+	background-size: 50px
+	&.no-scroll
+		overflow: hidden
+
+
+::-webkit-scrollbar
+	width: 10px
+	height: 10px
+	background-color: black
+
+::-webkit-scrollbar-track
+	-webkit-box-shadow: inset 0 0 6px  var(--second-color)
+	border-radius: 1px
+
+::-webkit-scrollbar-thumb
+	border-radius: 2px
+	background-color: var(--second-color)
+	-webkit-box-shadow: inset 0 0 6px  var(--second-color)
+
+
+.wrapper
+	transition: transform 1s
+	opacity: 0
+	visibility: hidden
+	&.active
+		opacity: 1
+		visibility: visible
+
+
+.scroll-animation
+	position: absolute
+	left: 4vh
+	top: 80vh
+
+#mouse
+	width: 40px
+	height: 40px
+	border-radius: 50%
+	background: var(--color-header)
+	position: fixed
+	z-index: 999
+	pointer-events: none
+	mix-blend-mode: difference
+	transition: width 0.5s, height 0.5s, opacity 0.3s
+	box-shadow: 0px 0px 5px 0px var(--color-header)
+	&.hide
+		opacity: 0
+	&.active
+		filter: blur(1px)
+		width: 15px
+		height: 15px
+		box-shadow: none
+		background: white
+		mix-blend-mode: normal
+		
+.btn-up 
+	position: fixed
+	background-color: var(--second-color)
+	right: 20px
+	bottom: 60px
+	border-radius: 50%
+	display: flex
+	align-items: center
+	justify-content: center
+	transition: all 0.3s ease-in-out
+	color: var(--color-text)
+	width: 50px
+	height: 50px
+	transform: skew(0deg, 0deg) translate(0)
+	z-index: 10
+	opacity: 1
+	&_hide 
+		opacity: 0
+		transform: skew(0deg, 90deg) translateX(50%)	
+	&-icon 
+		width: 40px
+		height: 40px
+		fill: currentcolor
+    
+.modal 
+	max-width: 500px
+	position: fixed
+	right: 20px
+	bottom: 20px
+	line-height: 25px
+	background-color: var(--black)
+	transition: 1.1s ease-out
+	filter: blur(0)
+	transform: scale(1)
+	opacity: 1
+	visibility: visible
+	z-index: 1
+	padding: calc( var(--index) * 2)
+	cursor: pointer
+	border-top-right-radius: 50px
+	border-bottom-left-radius: 50px
+	box-shadow: 0px 0px 5px 0px #696969
+	user-select: none	
+	font-size: calc( var(--index) * 0.81)	
+	& span
+		color: var(--second-color)
+	&__close
+		font-size: calc( var(--index) * 2)
+		position: absolute
+		left: 10px
+		top: 10px
+		cursor: pointer
+		display: flex
+		align-items: center
+		justify-content: center
+		&:hover
+			color: var(--second-color)
+	&.off 
+		opacity: 0
+		visibility: hidden
+		filter: blur(8px)
+		transform: translateX(200%)
+		box-shadow: 1rem 0 0 rgba(0, 0, 0, 0.2)
+
+
+
+  
+
+

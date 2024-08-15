@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <link type="image/png" sizes="120x120" rel="icon" href="favicon.png">
+    <link rel="stylesheet" href="libs/swiper/swiper-bundle.min.css">
+
+    <script src="libs/gsap/gsap.min.js" defer></script>
+    <script src="libs/gsap/ScrollTrigger.min.js" defer></script>
+    <script src="libs/gsap/ScrollSmoother.min.js" defer></script>
+    <script src="libs/swiper/swiper-bundle.min.js" defer></script>
+	<script src="libs/swiper/bindSwipers.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js" defer></script>
+    <script src="js/app.js" defer></script>
+    <script src="js/particles.js" defer></script>
+
+    <title>CV</title>
+</head>
+<body>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="arrow-up-short" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z" />
+        </symbol>
+    </svg>
+
+    <div class="btn-up btn-up_hide">
+        <svg class="btn-up-icon link" role="img" aria-label="Прокрутить страницу к началу">
+          <use xlink:href="#arrow-up-short"></use>
+        </svg>
+      </div>
+
+      <div class='loader'>
+             <div class="loader__body">
+                <div class="intern"></div>
+                <div class="external-shadow">
+                    <div class="central"></div>
+                </div>
+            </div>
+      </div>
+      
+
+    <div id="mouse"></div>
+
+
+    <span class="close-trigger link">
+        <i class="close-trigger-bar left"></i>
+        <i class="close-trigger-bar right"></i>
+    </span>
+    <div class="menu__header menu__header-top"></div>
+    <div class="menu__header menu__header-center"></div>
+    <div class="menu__header menu__header-bottom"></div>
+    <span class="menu-trigger link">
+        <i class="menu-trigger-bar top"></i>
+        <i class="menu-trigger-bar middle"></i>
+        <i class="menu-trigger-bar bottom"></i>
+    </span>
+    <nav class="first-section-menu">
+        <ul>
+            <li><a class="link" href="#">Main</a></li>
+            <li><a class="link" href="#">About</a></li>
+            <li><a class="link" href="#">Stack</a></li>
+            <li><a class="link" href="#">Portfolio</a></li>
+            <li><a class="link" href="#">Work</a></li>
+            <li><a class="link" href="#">Info</a></li>
+        </ul>
+        <div class="first-section__social">
+            <a target="_blank" class="link" href="https://github.com/Roman1306r"><img width="40" height="40" src="img/footer/github.png" alt="github"></a>
+            <a target="_blank" class="link" href="https://ru.linkedin.com/"><img width="40" height="40" src="img/footer/linked.png" alt="linkedin"></a>
+            <a target="_blank" class="link" href="https://www.instagram.com/psychosocial10/"><img width="40" height="40" src="img/footer/instagram.png" alt="instagram"></a>
+            <a target="_blank" class="link" href="https://t.me/DadkaRoch"><img width="40" height="40" src="img/footer/telegram.png" alt="telegram"></a>
+        </div>
+        <div class="first-section__reviews link">Reviews</div>
+    </nav>
+
+    <div class="modal off link" id="modal">
+        Hi, my name is <span>Roman</span>. I'm <span id='year'></span> years old and I've been in Frontend development for more than <span id='development'></span> years. On this page you can see my projects, my biography and also contact me.
+        <a href='#' class="modal__close">&times;</a>
+    </div>
+
+
+    <div class="wrapper">
+        <main class="container">
+            <div class="not__fullscreen">
+                <header class="first-section">
+                    <img data-speed="0.5" class="first-section_image" src="img/header/bgf.webp" alt="header-image">
+                    <div data-speed="0.8" class="main__header">
+                        <h1 class="main__header-title">I'm a <span class='deconstructed'>Frontend</span> Developer</h1>
+                        <h2 class="main__header-text"><a class="link" target="_blank" href="https://github.com/Roman1306r"><span class="text">Roman</span><span>Github</span></a>.Belarus</h2>
+                    </div>
+                    <div data-lag="0.5" class="scroll-animation link">
+                        <div class="mouse">
+                            <div class="wheel"></div>
+                        </div>
+                        <div class="arrows">
+                            <span class="first"></span>
+                            <span class="second"></span>
+                            <span class="third"></span>
+                        </div>
+                    </div>
+                </header>
+                <section class="portfolio">
+                    <article data-speed="0.9" class="portfolio__left">
+                        <div class="portfolio__textblock portfolio__item">
+                            <h2 class="portfolio__textblock-title">Beginning</h2>
+                            <p class="portfolio__textblock-text">In 2022, I graduated from the university with a technical degree not related to programming. But instead of working in my specialty, I started studying programming</p>
+                        </div>
+                        <img class="portfolio__item mobile-hide" src="img/work/2.webp" alt="Training">
+                        <div class="portfolio__textblock portfolio__item">
+                            <h2 class="portfolio__textblock-title">First money</h2>
+                            <p class="portfolio__textblock-text">After six months of training and practice, I realized that I needed experience working with real projects. This is how I found my first orders on freelance sites</p>
+                        </div>
+                        <img class="portfolio__item" src="img/work/4.webp" alt="Now">
+                    </article>
+                    <article data-speed="1.0" class="portfolio__right">
+                        <img class="portfolio__item" src="img/work/1.webp" alt="Beginning">
+                        <div class="portfolio__textblock portfolio__item">
+                            <h2 class="portfolio__textblock-title">Training</h2>
+                            <p class="portfolio__textblock-text"> I chose Frontend development and the JavaScript language in particular. The study was difficult but interesting. By devoting 2 to 12 hours to studying every day, I quickly began to acquire knowledge</p>
+                        </div>
+                        <img class="portfolio__item mobile-hide" src="img/work/3.webp" alt="First money">
+                        <div class="portfolio__textblock portfolio__item">
+                            <h2 class="portfolio__textblock-title">Now</h2>
+                            <p class="portfolio__textblock-text"> I continue to work as a freelancer, performing various tasks from layout to setting up payment systems and creating web services. At the same time, I continue to make my pet projects using javascript frameworks and libraries. I also do not only frontend but also backend development.
+                            </p>
+                        </div>
+                    </article>
+                </section>
+            </div>
+
+            <section class="tehnology">
+                    <h2>My Stack</h2>
+                    <article class="tehnology-firstslider">
+                        <div class="swiper tehnology__row">
+                            <div id='slider__wrapper' class="swiper-wrapper tehnology__row-track"></div>
+                        </div>
+                    </article>
+            </section>
+
+
+            <section class="amazing-slider">
+                <article id='am-in' class="sidebar"></article>
+                <article id='am-sl' class="main-slide"></article>
+
+                <article class="controls">
+                    <button  class="hide-sidebar link"><img width='20' src='./img/amazing/down.png' alt='down' /></button>
+                    <button  class="down-button link"><img width='30' src='./img/amazing/down.png' alt='down' /></button>
+                    <button  class="up-button link"><img width='30' src='./img/amazing/up.png' alt='up' /></button>
+                </article>
+            </section>
+            
+            <section class='mobile__slider'>
+                <div class="swiper">
+                    <div id='mobile__wrapper' class="swiper-wrapper"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </section>
+
+            <section class="magic-list"><h2>How do i work?</h2></section>
+
+            <section class="particles">
+                <canvas id="particles-js"></canvas>
+                <article class="particles__info">
+                            <div class="particles__info-item">
+                                <div class="header-item-dynamic">
+                                    <span data-digits-counter >5</span> / 5
+                                </div>
+                                <div class="header-item-static">
+                                    According to customer estimates
+                                </div>
+                            </div>
+                            <div class="particles__info-item">
+                                <div class="header-item-dynamic">
+                                    <span data-digits-counter >100</span>%
+                                </div>
+                                <div class="header-item-static">
+                                    Customers are recommended
+                                </div>
+                            </div>
+                            <div class="particles__info-item">
+                                <div class="header-item-dynamic">
+                                    <span data-digits-counter >5</span> +
+                                </div>
+                                <div class="header-item-static">
+                                    Regular customers
+                                </div>
+                            </div>
+                            <div class="particles__info-item">
+                                <div class="header-item-dynamic">
+                                    <span data-digits-counter >20 </span> +
+                                </div>
+                                <div class="header-item-static">
+                                    Completed projects
+                                </div>
+                            </div>
+                </article> 
+            </section>
+
+            <section class='reviews'>
+                <h2>Reviews</h2>
+                <article class='reviews__body'></article>
+            </section> 
+
+            <footer class="footer">
+                    <p>Vitebsk <span id="dateNow"></span></p>
+                    <article class="footer__social">
+                        <a target="_blank" class="link" href="https://github.com/Roman1306r"><img width="40" height="40" src="img/footer/github.png" alt="github"></a>
+                        <a target="_blank" class="link" href="https://ru.linkedin.com/"><img width="40" height="40" src="img/footer/linked.png" alt="linkedin"></a>
+                        <a target="_blank" class="link" href="https://www.instagram.com/psychosocial10/"><img width="40" height="40" src="img/footer/instagram.png" alt="instagram"></a>
+                        <a target="_blank" class="link" href="https://t.me/DadkaRoch"><img width="40" height="40" src="img/footer/telegram.png" alt="telegram"></a>
+                    </article>
+            </footer>
+        </main>
+    </div>
+
+    <script src="path/to/particles.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</body>
+</html>

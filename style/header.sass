@@ -1,0 +1,335 @@
+.warning
+	z-index: 999
+	text-align: center
+	position: fixed
+	width: 100vw
+	height: 100vh
+	backdrop-filter: blur(20px)
+	transform: translate(200vw, 0)
+	&.show
+		animation: show 1s forwards
+	&.hide
+		animation: hide 1s forwards
+
+.warning__dark
+	background-color: rgba(0, 0, 0, 0.8)
+	position: fixed
+	width: 100vw
+	height: 100vh
+	&::before
+		content: ""
+		position: absolute
+		border-left: 10vw solid transparent
+		border-right: 0vw solid transparent
+		border-top: 100vh solid rgba(0, 0, 0, 0.8)
+		left: -10vw
+	&::after
+		content: ""
+		position: absolute
+		border-left: 0vw solid transparent
+		border-right: 10vw solid transparent
+		border-bottom: 100vh solid rgba(0, 0, 0, 0.8)
+		right: -10vw
+
+.warning__container
+	max-width: 600px
+	position: fixed
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+
+.warning__title
+	font-size: 50px
+
+.warning__text
+	font-size: 20px
+	margin: 40px
+
+.warning__buttons
+	display: flex
+	justify-content: center
+	gap: 50px
+	align-items: center
+
+.warning__buttons-btn
+	padding: 10px 40px
+	font-size: 20px
+	border-radius: 5px
+	color: white
+	border: 0
+	cursor: pointer
+	background-color:  var(--second-color)
+	transition: all 0.3s
+	&.rem
+		background-color: rgb(138, 8, 40)
+	&:hover
+		transform: scale(1.05)
+		text-decoration: underline
+		&.rem
+			text-decoration: line-through
+
+.first-section__reviews
+	position: absolute
+	bottom: 5vh
+	left: -50vw
+	font-size: calc(var(--index) * 1)
+	transition: all 0.3s
+	&.active
+		transition: left 1s ease 2s
+		left: 5vw
+	&:hover
+		color: var(--second-color)
+	&:hover::after
+		width: 0
+	&::after
+		content: ""
+		position: absolute
+		right: -7vw
+		transition: width 1s
+		top: 50%
+		transform: translate(0, -50%)
+		width: 5vw
+		height: 2px
+		background-color: white
+
+.first-section__social
+	position: absolute
+	bottom: 0
+	right: -50vw
+	&.active
+		transition: right 1s ease 2s
+		right: 10vw
+
+.first-section-menu
+	position: fixed
+	height: 100vh
+	width: 100vw
+	padding: 10vh 20vw 10vh 3vw
+	font-size: calc(var(--index) * 4)
+	text-transform: uppercase
+	font-family: outfit-c
+	opacity: 0
+	z-index: 11
+	transform: translate(0, -100vh)
+	&.active
+		opacity: 1
+		transform: translate(0, 0)
+		transition: all 1s ease 1.5s
+	& ul
+		display: flex
+		flex-wrap: wrap
+		& li
+			position: relative
+			padding-right: 8vw
+			line-height: 1
+			overflow: hidden
+			& a
+				transition: all 0.3s
+				&:hover
+					color: var(--second-colorm)
+			&::after
+				content: ""
+				position: absolute
+				right: 4vw
+				transform: skew(-25deg, 15deg)
+				top: -10%
+				width: 10px
+				height: 120%
+				background-color: grey
+
+.first-section_image
+	width: 100%
+	position: absolute
+	display: inline-block
+	inset: 0
+	z-index: -1
+
+.first-section::before
+	content: ""
+	left: 5vh
+	position: absolute
+	top: 30vh
+	width: 1px
+	height: 25vh
+	background-color: grey
+	z-index: 1000
+
+.main__header
+	height: 100vh
+	position: relative
+
+.main__header-title
+	font-size: calc(var(--index) * 6)
+	position: absolute
+	width: min-content
+	bottom: 12vh
+	line-height: 0.9
+	display: block
+	letter-spacing: -.05em
+	user-select: none
+	& .deconstructed
+		background: url("./../img/header/code.webp") no-repeat
+		background-size: 130%
+		-webkit-background-clip: text
+		-webkit-text-fill-color: transparent
+		animation: deconstructed 15s infinite ease-in-out
+
+.main__header-text
+	position: absolute
+	font-size: calc(var(--index) * 2)
+	top: 4vh
+	font-weight: 100
+	user-select: none
+	& a
+		position: relative
+		overflow: hidden
+		user-select: none
+		-webkit-user-select: none
+		touch-action: manipulation	
+		& span:first-child
+			position: relative
+			transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1)
+			z-index: 10
+		& span:last-child
+			color: white
+			display: block
+			position: absolute
+			bottom: 0
+			transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1)
+			z-index: 100
+			opacity: 1
+			top: 50%
+			left: 50%
+			transform: translateX(-50%) translateY(-70%)
+			height: 14px
+			line-height: 13px
+		&:after
+			content: ""
+			position: absolute
+			bottom: -30%
+			left: 0
+			width: 100%
+			height: 80%
+			background-color: black
+			transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1)
+			z-index: 50
+			transform-origin: bottom center
+			transform: skewY(5deg) scaleY(2)
+
+
+.mouse
+	height: 6vh
+	width: 4vh
+	border-radius: 30px
+	border: 2px solid white
+	margin-bottom: 3px
+
+.wheel
+	animation: mouse-wheel 1.5s ease infinite
+	height: 2vh
+	width: 0.5vh
+	background: white
+	margin: 3px auto
+	border-radius: 3px
+
+.arrows span
+	width: 2vh
+	height: 2vh
+	border-right: 2px solid white
+	border-bottom: 2px solid white
+	transform: rotate(45deg)
+	display: block
+	margin: 0 auto
+	animation: mouse-scroll 2s infinite
+	&:nth-child(1)
+		animation-delay: 0.2s
+	&:nth-child(2)
+		animation-delay: 0.4s
+	&:nth-child(3)
+		animation-delay: 0.6s
+
+.menu__header-top, .menu__header-bottom, .menu__header-center
+	position: fixed
+	width: 200vw
+	height: 34vh
+	left: -20%
+	background-color: var(--black)
+	z-index: 10
+	transform: translate(-200%, 0%)
+	transition: all 2s
+	&.active
+		transform: translate(0%, 0%)
+
+.menu__header-bottom
+	top: 33.333vh
+	transform: translate(200%, 0%)
+
+.menu__header-center
+	top: 66.666vh
+
+.menu-trigger, .close-trigger
+	position: fixed
+	top: 32px
+	right: 20px
+	display: block
+	width: 52px
+	height: 52px
+	z-index: 333
+
+.menu-trigger:hover .menu-trigger-bar:before, .close-trigger:hover .menu-trigger-bar:before
+	width: 100%
+.menu-trigger:hover .close-trigger-bar:before, .close-trigger:hover .close-trigger-bar:before
+	width: 100%
+
+.close-trigger
+	z-index: 5
+	top: 42px
+
+.menu-trigger-bar
+	display: block
+	width: 100%
+	height: 4px
+	background-color: white
+	margin-bottom: 6px
+	transform: rotate(-45deg)
+	position: relative
+	&.top
+		width: 50%
+	&.middle::before
+		left: auto
+		right: 0
+	&.bottom
+		width: 50%
+		margin-left: 50%
+	&::before
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		display: block
+		width: 0%
+		height: 100%
+		background-color: var(--second-color)
+		transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1)
+
+.close-trigger-bar
+	display: block
+	width: 100%
+	height: 4px
+	background-color: #5e5e5e
+	position: relative
+	&.left
+		transform: translateX(100px) translateY(-100px) rotate(-45deg)
+	&.right
+		transform: translateX(-100px) translateY(-100px) rotate(45deg)
+		top: -3px
+	&::before
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		display: block
+		width: 0%
+		height: 100%
+		background-color: var(--second-color)
+		transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1)

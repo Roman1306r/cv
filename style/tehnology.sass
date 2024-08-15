@@ -1,0 +1,35 @@
+.tehnology
+	display: flex
+	flex-direction: column
+	justify-content: center
+	padding: calc(var(--index) * 5) 0
+	width: 100%
+	text-align: center
+	position: relative
+	overflow: hidden
+	&:hover
+		.tehnology-firstslider	
+			.tehnology__row-track
+					& .slide
+						& h3
+							transform: translateY(0%)	
+	& h2
+		font-size: calc(var(--index) * 3)
+		margin-bottom: calc(var(--index) * 3)
+		color: var(--second-color)
+		user-select: none
+	&  svg
+		position: absolute
+	.tehnology-firstslider
+		margin-bottom: 40px
+		overflow: auto
+		.tehnology__row-track
+			transition-timing-function: linear
+			& .slide
+				user-select: none
+				overflow: hidden
+				& h3
+					font-size: calc(var(--index) * 1)
+					font-weight: 900
+					transition: all 0.5s
+					transform: translateY(100%)

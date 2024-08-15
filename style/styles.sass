@@ -1,0 +1,154 @@
+@import 'reset'
+@import 'main'
+@import 'loader'
+@import 'keyframes'
+@import 'header'
+@import 'portfolio'
+@import 'tehnology'
+@import 'amazing'
+@import 'magic'
+@import 'particles'
+@import 'footer'
+@import 'reviews'
+
+@property --angle
+	syntax: "<angle>"
+	initial-value: 90deg
+	inherits: true
+
+@media (max-width: 1030px)
+	.wrapper
+		overflow-x: hidden
+	.first-section
+		overflow: hidden
+	#mouse
+		opacity: 0
+		visibility: hidden
+	.first-section__reviews
+		bottom: 2vh
+	.first-section::before
+		left: 2vh
+	.modal 
+		transform: translateY(50%)
+		bottom: 50%
+	.scroll-animation
+		opacity: 0
+		visibility: hidden
+	.portfolio
+		flex-direction: column-reverse
+		padding: calc(var(--index) * 4) 0px
+	.portfolio__item
+		width: 100%
+		max-width: calc(var(--index) * 210)
+		margin-bottom: calc(var(--portfolio-gap) / 3)
+		&.mobile-hide
+			display: none
+	.tehnology
+		height: auto
+		padding: calc(var(--index) * 8) 0
+		.tehnology-firstslider	
+			.tehnology__row-track
+				& .slide
+					& h3
+						transform: translateY(0%)	
+	
+	.amazing-slider
+		display: none
+	.mobile__slider
+		display: block
+	.cursor
+		display: none
+	.particles
+		&__info
+			flex-direction: column
+	.reviews
+		padding: calc( var(--index) * 7) calc( var(--index) * 0)
+		&__body
+			max-width: 80%
+	.btn-up 
+		right: auto
+		left: 20px
+		bottom: 80px
+
+
+@media (max-width: 767px)
+	.loader 
+		&__body
+			.external-shadow 
+				width: 15em
+				height: 15em
+				.central 
+					width: 15em
+					height: 15em
+	.not__fullscreen
+		padding: 0
+	.first-section
+		position: relative
+		padding: 15px
+		&::before
+			display: none
+		&_image
+			height: 100%
+			width: 130%
+			object-fit: cover
+	.first-section__reviews
+		bottom: 17vh
+		font-size: calc(var(--index) * 1.5)
+	.first-section__social
+		bottom: 15vh
+	.first-section-menu
+		font-size: calc(var(--index) * 3.5)
+		padding: 15vh 10vw 10vh 3vw
+		& ul li
+			line-height: 1.2
+	.main__header-title
+		font-size: calc(var(--index) * 5)
+	.main__header-text
+		font-size: calc(var(--index) * 2.5)
+		& a
+			text-decoration: underline
+	.menu-trigger, .close-trigger
+		width: 42px
+		height: 42px
+	.modal 
+		right: 5px
+		width: 90%
+		font-size: calc( var(--index) * 1.8)	
+		&__close
+			font-size: calc( var(--index) * 3)
+			left: 2px
+			top: 2px
+	.amazing-slider
+		height: 50vh
+		.main-slide
+			width: 100%
+			left: 0
+		.controls
+			& button
+				padding: 15px
+	.particles
+		&__info
+			gap: 50px
+	.reviews
+		padding: calc( var(--index) * 7) calc( var(--index) * 0)
+		& h2 
+			max-width: 98%
+		&__body
+			max-width: 98%
+	.footer
+		&__social
+			gap: 10px
+			& img
+				width: 30px
+				height: 30px
+	.first-section__social
+		& img
+			width: 30px
+			height: 30px
+
+
+@media (hover: hover) and (pointer: fine) 
+	.btn-up:hover 
+		opacity: 0.8
+
+
